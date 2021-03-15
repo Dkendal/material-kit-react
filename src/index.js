@@ -13,12 +13,20 @@ import LoginPage from "views/LoginPage/LoginPage.js";
 
 var hist = createBrowserHistory();
 
+// This can get moved to views/Components/BuilderExamplePage.js, or where ever
+// you want. The important thing is that we need somewhere to render content
+// that we control.
+function BuilderExamplePage(props) {
+  return <div>{"hello world"}</div>
+}
+
 ReactDOM.render(
   <Router history={hist}>
     <Switch>
       <Route path="/landing-page" component={LandingPage} />
       <Route path="/profile-page" component={ProfilePage} />
       <Route path="/login-page" component={LoginPage} />
+      <Route path="/builder-example-page" component={BuilderExamplePage} />
       <Route path="/" component={Components} />
     </Switch>
   </Router>,
